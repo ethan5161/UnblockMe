@@ -172,51 +172,6 @@ for row in range(probSize):
             if checkBlock == 1:
                 UnblockState.targetInd = len(blockList) - 1
 
-"""    
-        # Checks if the current space is nonempty and, if so, if the
-        # encountered block has not already been added to the list.
-        if checkBlock != 0 and checkBlock not in foundBlocks:
-            # Checks if the new block is horizontal or vertical,
-            # then if it is two or three spaces long, and finally
-            # adds it to the list of blocks.
-            # (Also checks for out of bounds errors first)
-            if (column + 1 < probSize):
-                # Checks if block is 2 or 3 units long
-                if int(probState[row][column + 1]) == checkBlock:
-                    if (column + 2 < probSize):
-                        if int(probState[row][column + 2]) == checkBlock:
-                            newBlock = Block(checkBlock, row, column, 3, "h")
-                            isHorizontal = 1
-                            blockList.append(newBlock)
-                            foundBlocks.append(checkBlock)
-                    else:
-                        newBlock = Block(checkBlock, row, column, 2, "h")
-                        isHorizontal = 1
-                        blockList.append(newBlock)
-                        foundBlocks.append(checkBlock)
-            # Only checks for vertical if it is found to not be horizontal
-            if (row + 1 < probSize) and (isHorizontal == 0):
-                # Checks if block is 2 or 3 units long
-                if int(probState[row + 1][column]) == checkBlock:
-                    if (row + 2 < probSize):
-                        if int(probState[row + 2][column]) == checkBlock:
-                            newBlock = Block(checkBlock, row, column, 3, "v")
-                            blockList.append(newBlock)
-                            foundBlocks.append(checkBlock)
-                    else:
-                        newBlock = Block(checkBlock, row, column, 2, "v")
-                        blockList.append(newBlock)
-                        foundBlocks.append(checkBlock)
-                        blockCount += 1
-
-        # Target block found, index recorded             
-        elif checkBlock == 1:
-            print("test")
-            UnblockState.targetInd = blockCount
-            foundBlocks.append(checkBlock)
-            blockCount += 1     
-    """
-
 display = Display(blockList)
 display.drawBlocks()
                     
